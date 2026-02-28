@@ -2,45 +2,411 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jimena Taciana Garcia, MD — Medical Data Scientist</title>
   <meta name="description" content="Jimena Taciana Garcia, MD. Medical Data Scientist focused on Women’s Health, Reproductive Medicine, Bioinformatics and Clinical Analytics." />
+  <meta name="robots" content="index, follow" />
+
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:60px auto;padding:0 18px;line-height:1.55}
-    .tag{display:inline-block;margin:6px 8px 0 0;padding:6px 10px;border:1px solid #ddd;border-radius:999px;font-size:14px}
-    .card{margin-top:22px;padding:16px 18px;border:1px solid #eee;border-radius:14px}
-    h1{font-size:34px;margin:0}
-    h2{font-size:18px;margin:0 0 10px}
-    .muted{color:#555}
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.14);
+      --accent: #7cdbff;
+      --accent2: #b6ff8f;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1040px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 420px at 15% 10%, rgba(124,219,255,.22), transparent 60%),
+        radial-gradient(800px 360px at 85% 15%, rgba(182,255,143,.16), transparent 55%),
+        radial-gradient(700px 380px at 50% 90%, rgba(124,219,255,.10), transparent 55%),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 70px; }
+
+    /* Top bar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(8px);
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      font-weight: 650;
+      letter-spacing:.2px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(124,219,255,.12);
+    }
+    .nav{ display:flex; gap:14px; align-items:center; }
+    .nav a{ color: var(--muted); font-size: 14px; padding: 6px 10px; border-radius: 999px; }
+    .nav a:hover{ color: var(--text); background: rgba(255,255,255,.06); text-decoration:none; }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap: 18px;
+      padding: 22px;
+      align-items:center;
+    }
+    .avatar{
+      width: 120px; height: 120px;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      overflow:hidden;
+      position:relative;
+    }
+    .avatar img{
+      width:100%; height:100%; object-fit: cover;
+      display:block;
+      filter: saturate(1.02) contrast(1.02);
+    }
+    .avatar::after{
+      content:"";
+      position:absolute; inset:0;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+      border-radius: 26px;
+      pointer-events:none;
+    }
+
+    h1{
+      margin:0;
+      font-size: 34px;
+      line-height: 1.18;
+      letter-spacing: -0.3px;
+    }
+    .subtitle{
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .badges{
+      margin-top: 12px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .badge{
+      font-size: 13px;
+      color: rgba(255,255,255,.84);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .badge strong{ color: var(--text); font-weight: 650; }
+
+    .cta{
+      margin-top: 14px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-size: 14px;
+      text-decoration:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.10); text-decoration:none; }
+    .btn.primary{
+      border-color: rgba(124,219,255,.45);
+      background: linear-gradient(135deg, rgba(124,219,255,.18), rgba(182,255,143,.14));
+    }
+    .btn small{ color: var(--muted); font-size: 12px; }
+
+    /* Sections */
+    .grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .card{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 35px rgba(0,0,0,.22);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .card .hd h2{
+      margin:0;
+      font-size: 15px;
+      letter-spacing: .2px;
+    }
+    .card .bd{ padding: 14px 16px; }
+
+    .lead{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Project cards */
+    .projects{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .proj{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      padding: 12px 12px;
+    }
+    .proj-top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    }
+    .proj h3{
+      margin:0;
+      font-size: 14px;
+      letter-spacing: .1px;
+    }
+    .proj p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .meta{
+      margin-top: 10px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .pill{
+      font-size: 12px;
+      padding: 5px 9px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      color: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.03);
+    }
+    .links{
+      margin-top: 10px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .link{
+      font-size: 13px;
+      color: rgba(255,255,255,.88);
+      border-bottom: 1px dotted rgba(255,255,255,.35);
+    }
+    .link:hover{ text-decoration:none; border-bottom-style: solid; }
+
+    /* Right column */
+    .list{
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .item{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      padding: 12px 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .item b{ color: var(--text); font-weight: 650; }
+
+    footer{
+      margin-top: 18px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      text-align:center;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .avatar{ width: 110px; height:110px; }
+      .grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 30px; }
+    }
   </style>
 </head>
+
 <body>
-  <h1>Jimena Taciana Garcia, MD</h1>
-  <p class="muted"><b>Medical Data Scientist</b> | Women’s Health | Reproductive Medicine | Bioinformatics | Clinical Analytics</p>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Jimena Taciana Garcia, MD</span>
+      </div>
+      <div class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
 
-  <div>
-    <span class="tag">R</span><span class="tag">Python</span><span class="tag">SQL</span>
-    <span class="tag">PostgreSQL</span><span class="tag">Seurat</span>
-    <span class="tag">scRNA-seq</span><span class="tag">Machine Learning</span>
-    <span class="tag">Git</span>
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- Upload your photo to the repo as profile.jpg (same folder as index.html) -->
+        <div class="avatar" aria-label="Profile photo">
+          <img src="profile.jpg" alt="Jimena Taciana Garcia" onerror="this.style.display='none';" />
+        </div>
+
+        <div>
+          <h1>Jimena Taciana Garcia, MD</h1>
+          <p class="subtitle">
+            <b>Medical Data Scientist</b> bridging clinical decision-making and reproducible analytics in
+            <b>Women’s Health</b>, <b>Reproductive Medicine</b> & <b>Bioinformatics</b>.
+          </p>
+
+          <div class="badges">
+            <span class="badge"><strong>Focus:</strong> Translational analytics</span>
+            <span class="badge"><strong>Strength:</strong> Clinical context</span>
+            <span class="badge"><strong>Method:</strong> Reproducible pipelines</span>
+            <span class="badge"><strong>Location:</strong> Buenos Aires, Argentina</span>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects <small>selected work</small></a>
+            <a class="btn" href="https://linkedin.com/in/jimena-taciana-garcia" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="https://github.com/jigarcia-2" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="mailto:jigarcia@itba.edu.ar">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <!-- Left -->
+      <section class="card" id="projects">
+        <div class="hd">
+          <h2>Selected Projects</h2>
+        </div>
+        <div class="bd">
+          <p class="lead">
+            Projects designed to demonstrate end-to-end analytical thinking, clinical relevance, and reproducible implementation.
+          </p>
+
+          <div class="projects" style="margin-top:12px;">
+            <div class="proj">
+              <div class="proj-top">
+                <div>
+                  <h3>Endometrial Organoid scRNA-seq Pipeline</h3>
+                  <p>118,672 single cells × 27,254 genes • Seurat-based workflow • focus on stem/progenitor markers & endometrial regeneration.</p>
+                </div>
+              </div>
+              <div class="meta">
+                <span class="pill">R</span>
+                <span class="pill">Seurat</span>
+                <span class="pill">scRNA-seq</span>
+                <span class="pill">Reproducibility</span>
+              </div>
+              <div class="links">
+                <!-- Replace with your real repo URLs if needed -->
+                <a class="link" href="https://github.com/jigarcia-2/endometrium-singlecell-pipeline" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </div>
+
+            <div class="proj">
+              <div class="proj-top">
+                <div>
+                  <h3>Breast Cancer SVM Model</h3>
+                  <p>Supervised ML with emphasis on clinically meaningful metrics, model selection and validation.</p>
+                </div>
+              </div>
+              <div class="meta">
+                <span class="pill">Python</span>
+                <span class="pill">SVM</span>
+                <span class="pill">Validation</span>
+                <span class="pill">Decision support</span>
+              </div>
+              <div class="links">
+                <a class="link" href="https://github.com/jigarcia-2/breast-cancer-svm" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </div>
+
+            <div class="proj">
+              <div class="proj-top">
+                <div>
+                  <h3>Public Health Hospital Analytics</h3>
+                  <p>Healthcare analytics for productivity & cost recovery using SQL and OLAP modeling logic.</p>
+                </div>
+              </div>
+              <div class="meta">
+                <span class="pill">SQL</span>
+                <span class="pill">OLAP</span>
+                <span class="pill">KPIs</span>
+                <span class="pill">Data modeling</span>
+              </div>
+              <div class="links">
+                <a class="link" href="https://github.com/jigarcia-2/public-health-hospital-analytics" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Right -->
+      <aside class="card" id="stack">
+        <div class="hd">
+          <h2>Technical Stack</h2>
+        </div>
+        <div class="bd">
+          <div class="list">
+            <div class="item"><b>Languages:</b> R, Python, SQL</div>
+            <div class="item"><b>Bioinformatics:</b> Seurat, scRNA-seq workflows</div>
+            <div class="item"><b>Data:</b> PostgreSQL, modeling, ETL/cleaning</div>
+            <div class="item"><b>ML:</b> classical ML, validation mindset</div>
+            <div class="item"><b>Repro:</b> Git, structured repos, documentation</div>
+          </div>
+
+          <div class="item" style="margin-top:10px;" id="contact">
+            <b>Contact</b><br/>
+            LinkedIn: <a href="https://linkedin.com/in/jimena-taciana-garcia" target="_blank" rel="noreferrer">jimena-taciana-garcia</a><br/>
+            GitHub: <a href="https://github.com/jigarcia-2" target="_blank" rel="noreferrer">jigarcia-2</a><br/>
+            Email: <a href="mailto:jigarcia@itba.edu.ar">jigarcia@itba.edu.ar</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="y"></span> Jimena Taciana Garcia • Built with GitHub Pages
+    </footer>
   </div>
 
-  <div class="card">
-    <h2>Selected Projects</h2>
-    <ul>
-      <li><b>Endometrial Organoid scRNA-seq Pipeline</b> — 118,672 cells × 27,254 genes | Seurat</li>
-      <li><b>Breast Cancer SVM Model</b> — Supervised ML | Clinically relevant metrics</li>
-      <li><b>Public Health Hospital Analytics</b> — SQL + OLAP modeling</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Contact</h2>
-    <p>
-      LinkedIn: <a href="https://linkedin.com/in/jimena-taciana-garcia">Profile</a><br/>
-      GitHub: <a href="https://github.com/jigarcia-2">Repositories</a><br/>
-      Email: <a href="mailto:jigarcia@itba.edu.ar">jigarcia@itba.edu.ar</a>
-    </p>
-  </div>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
