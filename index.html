@@ -3,285 +3,161 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<title>Jimena Taciana Garcia, MD | Clinical Data & Health Data Science</title>
-<meta name="description" content="Medical Doctor focused on Clinical Data, Healthcare Quality, Bioinformatics, Health Data Science, AI in Medicine and Precision Medicine. Women’s & Reproductive Health / Pharma & HealthTech." />
-
+<title>Jimena Taciana Garcia, MD | Data Reporting Analyst | Healthcare Analytics</title>
+<meta name="description" content="Physician turned healthcare data analyst. Specialized in data reporting, visualization and analytics for pharma and health-tech. Buenos Aires, Argentina." />
 <style>
 :root{
-  --navy:#120256;          /* Pantone 2766C */
-  --accent:#5B65DC;        /* Pantone 2726C */
+  --navy:#120256;
+  --accent:#5B65DC;
   --bg:#FAFAFD;
   --soft:#EEEEFD;
   --ink:#0e0b2b;
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   background:
-    radial-gradient(1200px 700px at 20% 10%, rgba(91,101,220,.18), transparent 55%),
-    radial-gradient(900px 600px at 90% 0%, rgba(18,2,86,.16), transparent 50%),
+    radial-gradient(1200px 700px at 20% 10%, rgba(91,101,220,.15), transparent 55%),
+    radial-gradient(900px 600px at 90% 0%, rgba(18,2,86,.12), transparent 50%),
     var(--bg);
   color:var(--ink);
 }
-
-.container{
-  max-width:1120px;
-  margin:28px auto; /* smaller top margin after removing topbar */
-  padding:0 20px;
-}
-
+.container{max-width:1120px;margin:28px auto;padding:0 20px}
+ 
 .hero{
   display:grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns:180px 1fr;
   gap:26px;
   align-items:center;
   padding:30px;
   border-radius:18px;
-  background:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.85);
   border:1px solid rgba(18,2,86,.10);
-  box-shadow:0 18px 60px rgba(18,2,86,.10);
-  backdrop-filter: blur(10px);
+  box-shadow:0 18px 60px rgba(18,2,86,.09);
 }
-
 .avatar{
-  width:180px;
-  height:180px;
-  border-radius:22px;
-  overflow:hidden;
+  width:180px;height:180px;border-radius:22px;overflow:hidden;
   border:1px solid rgba(18,2,86,.12);
-  background:linear-gradient(180deg, rgba(91,101,220,.10), rgba(18,2,86,.06));
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
-.avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-h1{
-  margin:0;
-  font-size:34px;
-  letter-spacing:-0.2px;
-  color:var(--navy);
-}
-
-.kicker{
-  margin-top:10px;
-  font-weight:800;
-  color:var(--accent);
-}
-
-.headline{
-  margin:12px 0 0;
-  font-size:16px;
-  line-height:1.55;
-  color:#1a1740;
-  max-width:780px;
-}
-
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:14px;
-}
+.avatar img{width:100%;height:100%;object-fit:cover}
+ 
+h1{margin:0;font-size:32px;letter-spacing:-0.2px;color:var(--navy)}
+.kicker{margin-top:8px;font-weight:800;color:var(--accent);font-size:15px}
+.headline{margin:12px 0 0;font-size:15.5px;line-height:1.65;color:#1a1740;max-width:750px}
+ 
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .badge{
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-  padding:8px 12px;
-  border-radius:999px;
+  display:inline-flex;gap:6px;align-items:center;
+  padding:7px 12px;border-radius:999px;
   border:1px solid rgba(18,2,86,.12);
-  background:rgba(238,238,253,.65);
-  font-size:13px;
-  color:var(--navy);
+  background:rgba(238,238,253,.70);
+  font-size:12.5px;color:var(--navy);
 }
 .badge b{font-weight:900}
-
-.cta{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
+ 
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .btn{
-  display:inline-block;
-  padding:10px 14px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:800;
-  border:1px solid rgba(18,2,86,.14);
-  transition: transform .15s ease;
+  display:inline-block;padding:9px 14px;border-radius:10px;
+  text-decoration:none;font-weight:800;font-size:13.5px;
+  border:1px solid rgba(18,2,86,.14);transition:transform .15s ease;
 }
-.btn.primary{
-  background:var(--navy);
-  color:white;
-}
-.btn.secondary{
-  background:rgba(255,255,255,.70);
-  color:var(--navy);
-}
-.btn:hover{transform: translateY(-1px)}
-.btn:active{transform: translateY(0px)}
-
+.btn.primary{background:var(--navy);color:white}
+.btn.secondary{background:rgba(255,255,255,.70);color:var(--navy)}
+.btn:hover{transform:translateY(-1px)}
+ 
 .maingrid{
-  margin-top:22px;
+  margin-top:20px;
   display:grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns:1.2fr .8fr;
   gap:18px;
 }
-
 .card{
-  padding:22px;
-  border-radius:16px;
-  background:rgba(255,255,255,.82);
+  padding:22px;border-radius:16px;
+  background:rgba(255,255,255,.85);
   border:1px solid rgba(18,2,86,.10);
-  box-shadow:0 14px 50px rgba(18,2,86,.07);
-  backdrop-filter: blur(10px);
+  box-shadow:0 12px 44px rgba(18,2,86,.07);
 }
-
-.card h2{
-  margin:0 0 10px;
-  font-size:18px;
-  color:var(--navy);
-}
-.small{
-  margin:0 0 12px;
-  color:#2b2855;
-  line-height:1.55;
-  font-size:14.5px;
-}
-
+.card h2{margin:0 0 8px;font-size:17px;color:var(--navy)}
+.small{margin:0 0 10px;color:#2b2855;line-height:1.58;font-size:14px}
+ 
 .project{
-  padding:16px;
-  border-radius:14px;
-  border:1px solid rgba(18,2,86,.10);
-  background:rgba(250,250,253,.55);
+  padding:15px;border-radius:13px;
+  border:1px solid rgba(18,2,86,.09);
+  background:rgba(250,250,253,.60);
   margin-top:12px;
 }
 .project b{color:var(--navy)}
-.project a{
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:900;
+.project .ptag{
+  display:inline-block;font-size:11.5px;font-weight:700;
+  background:rgba(91,101,220,.12);color:var(--navy);
+  border-radius:999px;padding:3px 9px;margin:2px 2px 0 0;
 }
+.project a{color:var(--accent);text-decoration:none;font-weight:900;font-size:13px}
 .project a:hover{text-decoration:underline}
-
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.pill{
-  background:rgba(238,238,253,.75);
-  border:1px solid rgba(18,2,86,.10);
-  border-radius:999px;
-  padding:6px 10px;
-  font-size:12.5px;
-  color:var(--navy);
-  font-weight:700;
-}
-
-.section{
-  margin-top:18px;
-}
-.section h2{
-  font-size:18px;
-  margin:0 0 6px;
-  color:var(--navy);
-}
-.section-subtitle{
-  color:#2b2855;
-  margin:0 0 14px;
-  font-size:14.5px;
-}
-
-.featuregrid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
+.project-meta{font-size:13px;color:#2b2855;margin:6px 0 8px;line-height:1.5}
+ 
+.section{margin-top:18px}
+.section h2{font-size:17px;margin:0 0 6px;color:var(--navy)}
+.section-subtitle{color:#2b2855;margin:0 0 12px;font-size:13.5px}
+ 
+.featuregrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .item{
-  background:rgba(255,255,255,0.60);
-  padding:16px;
-  border-radius:14px;
-  border:1px solid rgba(18,2,86,.10);
+  background:rgba(255,255,255,.65);padding:14px;
+  border-radius:13px;border:1px solid rgba(18,2,86,.09);
 }
-.item h3{
-  margin:0 0 8px;
-  font-size:14px;
-  color:var(--navy);
-  letter-spacing:.2px;
-}
-.item p{
-  margin:0;
-  color:#2b2855;
-  font-size:14px;
-  line-height:1.55;
-}
-
+.item h3{margin:0 0 6px;font-size:13px;color:var(--navy);font-weight:700}
+.item p{margin:0;color:#2b2855;font-size:13px;line-height:1.55}
+ 
 .stackrow{
-  display:flex;
-  justify-content:space-between;
-  gap:14px;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid rgba(18,2,86,.10);
-  background:rgba(250,250,253,.55);
-  margin-top:10px;
+  display:flex;justify-content:space-between;gap:12px;
+  padding:10px 13px;border-radius:12px;
+  border:1px solid rgba(18,2,86,.09);
+  background:rgba(250,250,253,.60);margin-top:9px;
+  font-size:13.5px;
 }
 .stackrow b{color:var(--navy)}
 .stackrow span{color:#2b2855}
-
-.footer{
-  margin:44px 0 26px;
-  text-align:center;
-  color:#6a6792;
-  font-size:13px;
-}
-
+ 
+.footer{margin:40px 0 24px;text-align:center;color:#6a6792;font-size:13px}
 a{color:var(--accent)}
 a:hover{opacity:.9}
-
-@media (max-width: 920px){
+ 
+@media(max-width:920px){
   .hero{grid-template-columns:1fr}
-  .avatar{width:150px;height:150px}
+  .avatar{width:140px;height:140px}
   .maingrid{grid-template-columns:1fr}
   .featuregrid{grid-template-columns:1fr}
 }
 </style>
 </head>
-
 <body>
 <div class="container">
-
+ 
   <section class="hero" id="top">
     <div class="avatar">
-      <!-- Make sure the file in your repo is EXACTLY named: profile.jpg -->
       <img src="profile.jpg" alt="Jimena Taciana Garcia">
     </div>
-
     <div>
       <h1>Jimena Taciana Garcia, MD</h1>
-
+ 
       <div class="kicker">
-        Medical Doctor | Clinical Data & Healthcare Quality | Bioinformatics & Health Data Science | AI in Medicine
+        Data Reporting Analyst &nbsp;·&nbsp; Healthcare Analytics &nbsp;·&nbsp; Health Consulting &nbsp;·&nbsp; Clinical Data & Visualization
       </div>
-
+ 
       <p class="headline">
-        I bridge <b>clinical reasoning</b> with <b>healthcare analytics</b> to improve <b>clinical data quality</b>, <b>decision-making</b>, and <b>process reliability</b> in Women’s Health, Reproductive Medicine, and pharma/health-tech contexts.
+        I am a physician turned healthcare data analyst — a path I chose deliberately, because I believe the most meaningful insights come from someone who has lived the clinical reality behind the data.<br><br>
+        With 10+ years in real hospital and fertility care settings, I know what it means when a number changes in a dataset — it's a patient, a decision, a life. Today I specialize in <b>data reporting, visualization and multi-source analytics</b> for pharma and health-tech, building reproducible pipelines that translate complex healthcare datasets into <b>clear, actionable insights for stakeholders</b>.
       </p>
-
+ 
       <div class="badges">
-        <div class="badge"><b>Location:</b> Argentina</div>
+        <div class="badge"><b>Location:</b> Buenos Aires, Argentina</div>
         <div class="badge"><b>EU Citizenship:</b> Yes</div>
         <div class="badge"><b>Work mode:</b> Remote / International</div>
-        <div class="badge"><b>Focus:</b> Clinical data, quality, AI in medicine</div>
+        <div class="badge"><b>Focus:</b> Data reporting · pharma · health-tech</div>
       </div>
-
+ 
       <div class="cta">
         <a class="btn primary" href="#projects">View Projects</a>
         <a class="btn secondary" href="#stack">Stack</a>
@@ -292,94 +168,107 @@ a:hover{opacity:.9}
       </div>
     </div>
   </section>
-
+ 
   <div class="maingrid">
+ 
     <section id="projects" class="card">
       <h2>Selected Projects</h2>
-      <p class="small">Work designed to demonstrate end-to-end analytical thinking, clinical relevance, and reproducible implementation.</p>
-
+      <p class="small">End-to-end analytical work combining clinical domain expertise with reproducible data pipelines and stakeholder-facing reporting.</p>
+ 
       <div class="project">
-        <b>Endometrial Organoid scRNA-seq Pipeline</b><br/>
-        <span class="small">118,672 cells × 27,254 genes · Seurat workflow · stem/progenitor markers & endometrial regeneration.</span><br/>
-        <div class="pills">
-          <span class="pill">R</span><span class="pill">Seurat</span><span class="pill">scRNA-seq</span><span class="pill">Reproducibility</span>
+        <b>Personal Health Behavioral Analytics — Data Reporting & Visualization</b>
+        <div class="project-meta">
+          6-stage reproducible pipeline integrating 4 multi-source personal datasets (Apple Health, Spotify, Netflix, Mercado Libre).
+          Developed 4 interactive visualizations — Tableau Bubble Heatmap, Flourish Line Chart, RAWGraphs Parallel Coordinates, Datawrapper Scatter Plot —
+          each answering a specific analytical question about behavioral KPIs.
+          Delivered as a narrative web-based storytelling report for non-technical audiences.
         </div>
-        <div style="margin-top:10px;">
-          <a href="https://github.com/jigarcia-2/endometrium-singlecell-pipeline" target="_blank" rel="noopener">Repository →</a>
+        <span class="ptag">Tableau</span><span class="ptag">Flourish</span><span class="ptag">Datawrapper</span><span class="ptag">RAWGraphs</span><span class="ptag">Python</span><span class="ptag">R</span><span class="ptag">KPI reporting</span><span class="ptag">Storytelling</span>
+        <div style="margin-top:10px;display:flex;gap:14px">
+          <a href="https://jigarcia-2.github.io/infovis/visualizacion_datos_personales/" target="_blank" rel="noopener">Live project →</a>
+          <a href="https://github.com/jigarcia-2/infovis" target="_blank" rel="noopener">Repository →</a>
         </div>
       </div>
-
+ 
       <div class="project">
-        <b>Breast Cancer SVM Model</b><br/>
-        <span class="small">Supervised ML emphasizing a validation mindset and clinically meaningful metrics.</span><br/>
-        <div class="pills">
-          <span class="pill">Python</span><span class="pill">SVM</span><span class="pill">Validation</span><span class="pill">Decision support</span>
+        <b>Public Health Hospital Analytics — PostgreSQL / OLAP</b>
+        <div class="project-meta">
+          Relational database in PostgreSQL to analyze hospital management and resource utilization.
+          OLAP queries for hospital productivity, medication consumption, cost recovery and KPI reporting.
+          Exploratory analysis to support stakeholder decision-making in public health resource allocation.
         </div>
-        <div style="margin-top:10px;">
-          <a href="https://github.com/jigarcia-2/breast-cancer-svm" target="_blank" rel="noopener">Repository →</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <b>Public Health Hospital Analytics</b><br/>
-        <span class="small">Healthcare productivity & cost recovery using SQL and OLAP modeling logic.</span><br/>
-        <div class="pills">
-          <span class="pill">SQL</span><span class="pill">OLAP</span><span class="pill">KPIs</span><span class="pill">Data modeling</span>
-        </div>
-        <div style="margin-top:10px;">
+        <span class="ptag">SQL</span><span class="ptag">PostgreSQL</span><span class="ptag">OLAP</span><span class="ptag">KPIs</span><span class="ptag">Healthcare analytics</span><span class="ptag">Data modeling</span>
+        <div style="margin-top:10px">
           <a href="https://github.com/jigarcia-2/public-health-hospital-analytics" target="_blank" rel="noopener">Repository →</a>
         </div>
       </div>
+ 
+      <div class="project">
+        <b>Breast Cancer Classification — Machine Learning</b>
+        <div class="project-meta">
+          SVM model for clinical decision support with emphasis on clinically relevant performance metrics (sensitivity, specificity, AUC).
+        </div>
+        <span class="ptag">Python</span><span class="ptag">SVM</span><span class="ptag">Model evaluation</span><span class="ptag">Decision support</span>
+        <div style="margin-top:10px">
+          <a href="https://github.com/jigarcia-2/breast-cancer-svm" target="_blank" rel="noopener">Repository →</a>
+        </div>
+      </div>
+ 
+      <div class="project">
+        <b>Endometrial Organoid scRNA-seq Pipeline</b>
+        <div class="project-meta">
+          Reproducible bioinformatics pipeline for 118,672 single cells × 27,254 genes. Seurat workflow for stem/progenitor marker identification.
+        </div>
+        <span class="ptag">R</span><span class="ptag">Seurat</span><span class="ptag">scRNA-seq</span><span class="ptag">Reproducibility</span>
+        <div style="margin-top:10px">
+          <a href="https://github.com/jigarcia-2/endometrium-singlecell-pipeline" target="_blank" rel="noopener">Repository →</a>
+        </div>
+      </div>
     </section>
-
+ 
     <aside class="card">
       <section class="section" id="stack">
-        <h2>What I Bring to a Clinical & Data Team</h2>
-        <p class="section-subtitle">Applied strengths grounded in real hospital and reproductive care settings.</p>
-
+        <h2>What I bring</h2>
+        <p class="section-subtitle">Applied strengths grounded in real clinical and hospital settings.</p>
+ 
         <div class="featuregrid">
           <div class="item">
-            <h3>Clinical & Pharma/Healthcare Context</h3>
-            <p>10+ years in hospital and fertility care settings. Strong grasp of workflows, protocols, and real-world constraints.</p>
+            <h3>Data reporting & visualization</h3>
+            <p>KPI dashboards, narrative reports and interactive visualizations for pharma and health-tech stakeholders.</p>
           </div>
-
           <div class="item">
-            <h3>Clinical Data Quality & Validation</h3>
-            <p>Medical record review, diagnostic consistency, protocol alignment, and reliability across multidisciplinary teams.</p>
+            <h3>Clinical domain expertise</h3>
+            <p>10+ years in hospital and fertility care. I understand what the data actually means for patients and decisions.</p>
           </div>
-
           <div class="item">
-            <h3>Reproducible Analytics</h3>
-            <p>Structured repos, documentation mindset, version control, and transparent pipelines.</p>
+            <h3>End-to-end pipelines</h3>
+            <p>From raw data ingestion through transformation, analysis and stakeholder-facing output. Reproducible and documented.</p>
           </div>
-
           <div class="item">
-            <h3>Health Data & Modeling</h3>
-            <p>Validation-first ML approach, ETL/cleaning, and clinical interpretation of outputs.</p>
+            <h3>Healthcare analytics</h3>
+            <p>Multi-source data integration, EDA, data quality review and actionable insights across pharma and clinical contexts.</p>
           </div>
-
+          <div class="item">
+            <h3>Health consulting</h3>
+            <p>Strategic data-driven perspectives for healthcare organizations. Business case development and operational analysis.</p>
+          </div>
           <div class="item">
             <h3>Bioinformatics</h3>
-            <p>Seurat workflows · scRNA-seq analysis · translational perspective in reproductive biology.</p>
-          </div>
-
-          <div class="item">
-            <h3>Work Preferences</h3>
-            <p>Remote / international collaboration · EU citizenship · health-tech, biotech & pharma context.</p>
+            <p>Seurat · scRNA-seq · translational perspective in reproductive biology and precision medicine.</p>
           </div>
         </div>
-
-        <div style="margin-top:18px;">
-          <h2 style="margin-bottom:6px;">Technical Stack</h2>
-
+ 
+        <div style="margin-top:18px">
+          <h2 style="margin-bottom:6px" id="techstack">Technical stack</h2>
           <div class="stackrow"><b>Languages</b><span>R · Python · SQL</span></div>
-          <div class="stackrow"><b>Data</b><span>PostgreSQL · data modeling · ETL/cleaning</span></div>
+          <div class="stackrow"><b>Visualization</b><span>Tableau · Flourish · Datawrapper · RAWGraphs · Power BI (in progress)</span></div>
+          <div class="stackrow"><b>Data</b><span>PostgreSQL · ETL · data transformation · KPI reporting</span></div>
           <div class="stackrow"><b>ML / AI</b><span>Machine Learning · Deep Learning (fundamentals)</span></div>
           <div class="stackrow"><b>Bioinformatics</b><span>Seurat · scRNA-seq workflows</span></div>
-          <div class="stackrow"><b>Repro</b><span>Git · structured repos · documentation</span></div>
+          <div class="stackrow"><b>Tools</b><span>Git · GitHub · Excel (Advanced)</span></div>
         </div>
-
-        <section id="contact" style="margin-top:18px;">
+ 
+        <section id="contact" style="margin-top:18px">
           <h2>Contact</h2>
           <p class="small" style="margin-bottom:0">
             LinkedIn: <a href="https://linkedin.com/in/jimena-taciana-garcia" target="_blank" rel="noopener">jimena-taciana-garcia</a><br/>
@@ -390,11 +279,12 @@ a:hover{opacity:.9}
       </section>
     </aside>
   </div>
-
+ 
   <div class="footer">
-    © 2026 Jimena Taciana Garcia · Clinical Medicine × Health Data Science
+    © 2026 Jimena Taciana Garcia · Clinical Medicine × Healthcare Data Analytics
   </div>
-
+ 
 </div>
 </body>
 </html>
+ 
